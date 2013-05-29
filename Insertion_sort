@@ -1,0 +1,62 @@
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class Insertion_sort
+{
+  public static void main(String args[]) throws IOException
+	{
+		
+		BufferedReader br = null;
+		int No_of_elements = 0,key,i,j,m =0;
+		
+		
+		System.out.println("Reading input array...");
+		br = new BufferedReader(new FileReader("C:\\Users\\Harsha.Harsha-PC\\Desktop\\Input_array.txt"));
+		No_of_elements = Integer.parseInt(br.readLine());
+		
+		int[] Input_array = new int[No_of_elements];
+		
+		while(m < No_of_elements)
+		{
+			 Input_array[m] = Integer.parseInt(br.readLine());
+			 ++m;
+		}
+		
+		br.close();	
+		System.out.println("Sorting the array using: Insertion sort");
+		
+
+		
+		
+		
+		for(j = 1; j < Input_array.length;j++)
+		{
+			key = Input_array[j];
+			
+			i = j-1;
+			
+			while((i>=0)&& (Input_array[i] >key))
+			{
+				Input_array[i+1] = Input_array[i];
+				i = i-1;
+			}
+			
+			Input_array[i+1] = key;
+			
+
+		}
+		
+		System.out.println("Sorted array is:");
+		for(int k = 0;k <Input_array.length;k++)
+		{
+			System.out.printf("%d ",Input_array[k]);
+		}
+		
+		
+		
+		
+	}
+}
