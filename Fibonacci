@@ -1,0 +1,45 @@
+import java.util.*;
+
+
+public class Fibo
+{
+  
+	
+	public static void main(String args[]) 
+	{
+		int upto_num = 0;
+		List<Integer> Fibseries = new ArrayList<Integer>();
+		Fibseries.clear();
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the positive integer upto which Fibonacci series is required: ");
+		upto_num = Integer.parseInt(s.nextLine());
+		s.close();
+
+		Fibo f = new Fibo();
+	
+		for(int i =0;i<upto_num;i++)
+		{
+			Fibseries.add(f.Find_fibon(i));
+		}
+		
+		System.out.println(Fibseries);
+		
+		
+	}
+	
+				
+		
+	int Find_fibon(int num)
+	{
+		if(num== 1||num== 0)
+			return num;
+		else
+			return (Find_fibon(num-1)+Find_fibon(num-2));
+	}
+			
+			
+		
+	
+	
+}
